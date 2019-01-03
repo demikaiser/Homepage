@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 class App extends Component {
   render() {
+
+    var htmlContent = require('./achievement/blogs/(20180521)NVidiaJetsonTX2DevKitsSetup(Jetpack)/index.html');
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Hello Homepage</h1>
+         <div dangerouslySetInnerHTML={ {__html: htmlContent} } />
       </div>
     );
   }
