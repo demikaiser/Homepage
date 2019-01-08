@@ -3,11 +3,11 @@ const fs = require('fs');
 // ######## ######## ######## ######## ######## ######## ######## ########
 // #                           Pre-Processing                            #
 // ######## ######## ######## ######## ######## ######## ######## ########
-console.log("######## achievementJsonGen: Start Processing ########");
+console.log("######## achievementsJsonGen: Start Processing ########");
 const currentDir = __dirname;
 
 // Delete the existing file first.
-const fileToDelete = currentDir + '/achievement.js';
+const fileToDelete = currentDir + '/achievements.js';
 fs.statSync(fileToDelete, function (err, stats) {
     if (err) { return console.error(err); }
     fs.unlinkSync(fileToDelete, function (err) {
@@ -33,7 +33,7 @@ var stringToStore = "";
 // ######## ######## ######## ######## ######## ######## ######## ########
 
 // File structure initialization.
-var achievement = {
+var achievements = {
   "blogs": [],
   "portfolios": [],
   "vlogs": []
@@ -42,22 +42,22 @@ var achievement = {
 // Search information.json files.
 var getAllEntriesFromOneFolder = (folder) => {
 
-  let dirs = fs.readdirSync(currentDir + '/achievement/' + folder);
+  let dirs = fs.readdirSync(currentDir + '/achievements/' + folder);
 
   for (let i = 0; i < dirs.length; i++) {
-    let data = fs.readFileSync(currentDir + '/achievement/' + folder + '/' + dirs[i] + '/information.json', 'utf8');
+    let data = fs.readFileSync(currentDir + '/achievements/' + folder + '/' + dirs[i] + '/information.json', 'utf8');
     let jsonFromData = JSON.parse(data);
 
     let jsonToPush = {
       'id': dirs[i],
-      "pathHtml": './achievement/' + folder + '/' + dirs[i] + '/index.html',
-      "pathThumbnail": './achievement/' + folder + '/' + dirs[i] + '/thumbnail.jpg',
+      "pathHtml": './achievements/' + folder + '/' + dirs[i] + '/index.html',
+      "pathThumbnail": './achievements/' + folder + '/' + dirs[i] + '/thumbnail.jpg',
       "title": jsonFromData.title,
       "subtitle": jsonFromData.subtitle,
       "description": jsonFromData.description
     };
 
-    achievement[folder].push(jsonToPush);
+    achievements[folder].push(jsonToPush);
   }
 
 }
@@ -67,72 +67,72 @@ getAllEntriesFromOneFolder('portfolios');
 getAllEntriesFromOneFolder('vlogs');
 
 // Reverse the elements to get the most latest articles on the top.
-achievement.blogs = achievement.blogs.reverse();
-achievement.portfolios = achievement.portfolios.reverse();
-achievement.vlogs = achievement.vlogs.reverse();
+achievements.blogs = achievements.blogs.reverse();
+achievements.portfolios = achievements.portfolios.reverse();
+achievements.vlogs = achievements.vlogs.reverse();
 
 // ######## ######## ######## ######## ######## ######## ######## ########
 // #                       JSON String Processing                        #
 // ######## ######## ######## ######## ######## ######## ######## ########
-var jsonToStore = 'const achievement = { blogs: [';
+var jsonToStore = 'const achievements = { blogs: [';
 
-for (let i = 0; i < achievement.blogs.length; i++) {
+for (let i = 0; i < achievements.blogs.length; i++) {
   if (i !== 0) { jsonToStore += ','}
   jsonToStore += '{';
 
-  jsonToStore += 'id:' + '\"' + achievement.blogs[i].id+ '\"';
+  jsonToStore += 'id:' + '\"' + achievements.blogs[i].id+ '\"';
   jsonToStore += ',';
-  jsonToStore += 'pathHtml: require(\"' + achievement.blogs[i].pathHtml + '\")';
+  jsonToStore += 'pathHtml: require(\"' + achievements.blogs[i].pathHtml + '\")';
   jsonToStore += ',';
-  jsonToStore += 'pathThumbnail: require(\"' + achievement.blogs[i].pathThumbnail+ '\")';
+  jsonToStore += 'pathThumbnail: require(\"' + achievements.blogs[i].pathThumbnail+ '\")';
   jsonToStore += ',';
-  jsonToStore += 'title:' + '\"' + achievement.blogs[i].title + '\"';
+  jsonToStore += 'title:' + '\"' + achievements.blogs[i].title + '\"';
   jsonToStore += ',';
-  jsonToStore += 'subtitle:' + '\"' + achievement.blogs[i].subtitle + '\"';
+  jsonToStore += 'subtitle:' + '\"' + achievements.blogs[i].subtitle + '\"';
   jsonToStore += ',';
-  jsonToStore += 'description:' + '\"' + achievement.blogs[i].description + '\"';
+  jsonToStore += 'description:' + '\"' + achievements.blogs[i].description + '\"';
 
   jsonToStore += '}';
 }
 
 jsonToStore += '], portfolios: [';
 
-for (let i = 0; i < achievement.portfolios.length; i++) {
+for (let i = 0; i < achievements.portfolios.length; i++) {
   if (i !== 0) { jsonToStore += ','}
   jsonToStore += '{';
 
-  jsonToStore += 'id:' + '\"' + achievement.portfolios[i].id+ '\"';
+  jsonToStore += 'id:' + '\"' + achievements.portfolios[i].id+ '\"';
   jsonToStore += ',';
-  jsonToStore += 'pathHtml: require(\"' + achievement.portfolios[i].pathHtml + '\")';
+  jsonToStore += 'pathHtml: require(\"' + achievements.portfolios[i].pathHtml + '\")';
   jsonToStore += ',';
-  jsonToStore += 'pathThumbnail: require(\"' + achievement.portfolios[i].pathThumbnail+ '\")';
+  jsonToStore += 'pathThumbnail: require(\"' + achievements.portfolios[i].pathThumbnail+ '\")';
   jsonToStore += ',';
-  jsonToStore += 'title:' + '\"' + achievement.portfolios[i].title + '\"';
+  jsonToStore += 'title:' + '\"' + achievements.portfolios[i].title + '\"';
   jsonToStore += ',';
-  jsonToStore += 'subtitle:' + '\"' + achievement.portfolios[i].subtitle + '\"';
+  jsonToStore += 'subtitle:' + '\"' + achievements.portfolios[i].subtitle + '\"';
   jsonToStore += ',';
-  jsonToStore += 'description:' + '\"' + achievement.portfolios[i].description + '\"';
+  jsonToStore += 'description:' + '\"' + achievements.portfolios[i].description + '\"';
 
   jsonToStore += '}';
 }
 
 jsonToStore += '], vlogs: [';
 
-for (let i = 0; i < achievement.vlogs.length; i++) {
+for (let i = 0; i < achievements.vlogs.length; i++) {
   if (i !== 0) { jsonToStore += ','}
   jsonToStore += '{';
 
-  jsonToStore += 'id:' + '\"' + achievement.vlogs[i].id+ '\"';
+  jsonToStore += 'id:' + '\"' + achievements.vlogs[i].id+ '\"';
   jsonToStore += ',';
-  jsonToStore += 'pathHtml: require(\"' + achievement.vlogs[i].pathHtml + '\")';
+  jsonToStore += 'pathHtml: require(\"' + achievements.vlogs[i].pathHtml + '\")';
   jsonToStore += ',';
-  jsonToStore += 'pathThumbnail: require(\"' + achievement.vlogs[i].pathThumbnail+ '\")';
+  jsonToStore += 'pathThumbnail: require(\"' + achievements.vlogs[i].pathThumbnail+ '\")';
   jsonToStore += ',';
-  jsonToStore += 'title:' + '\"' + achievement.vlogs[i].title + '\"';
+  jsonToStore += 'title:' + '\"' + achievements.vlogs[i].title + '\"';
   jsonToStore += ',';
-  jsonToStore += 'subtitle:' + '\"' + achievement.vlogs[i].subtitle + '\"';
+  jsonToStore += 'subtitle:' + '\"' + achievements.vlogs[i].subtitle + '\"';
   jsonToStore += ',';
-  jsonToStore += 'description:' + '\"' + achievement.vlogs[i].description + '\"';
+  jsonToStore += 'description:' + '\"' + achievements.vlogs[i].description + '\"';
 
   jsonToStore += '}';
 }
@@ -143,9 +143,9 @@ jsonToStore += ']};';
 // #                          Finalize & Store                           #
 // ######## ######## ######## ######## ######## ######## ######## ########
 stringToStore += jsonToStore;
-stringToStore += "export default achievement;"
+stringToStore += "export default achievements;"
 
-fs.writeFile (currentDir + "/achievement.js", stringToStore, function(err) {
+fs.writeFile (currentDir + "/achievements.js", stringToStore, function(err) {
     if (err) throw err;
     console.log('File saved successfully!');
 });

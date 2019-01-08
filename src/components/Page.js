@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Page extends Component {
 
-
   render() {
 
-    var achievement = require('../achievement.js');
-
-    console.log(achievement);
-
     var contents = [
-      achievement.default.portfolios[0].pathHtml,
-      achievement.default.blogs[1].pathHtml
+      this.props.achievements.blogs[2].pathHtml
     ]
-
-
 
     return (
       <div>
@@ -28,4 +21,8 @@ class Page extends Component {
   }
 }
 
-export default Page;
+const mapStateToProps = (state) => {
+  return { achievements: state.achievements }
+};
+
+export default connect(mapStateToProps)(Page);
