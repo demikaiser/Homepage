@@ -4,9 +4,9 @@ import Home from "./components/Home";
 import Prolog from "./components/Prolog";
 import Epilog from "./components/Epilog";
 import About from "./components/About";
-import Portfolios from "./components/Portfolios";
-import Blogs from "./components/Blogs";
-import Vlogs from "./components/Vlogs";
+import Contents from "./components/Contents";
+import Page from "./components/Page";
+import { connect } from "react-redux";
 import "bulma/css/bulma.css";
 
 class App extends Component {
@@ -20,15 +20,44 @@ class App extends Component {
             <div class="column is-two-thirds">
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/portfolios" component={Portfolios} />
-                <Route path="/blogs" component={Blogs} />
-                <Route path="/vlogs" component={Vlogs} />
-                <Route path="/about" component={About} />
+                <Route
+                  exact
+                  path="/blogs"
+                  component={() => (
+                    <Contents
+                      contentsName="blogs"
+                      contents={this.props.achievements.blogs}
+                    />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/portfolios"
+                  component={() => (
+                    <Contents
+                      contentsName="portfolios"
+                      contents={this.props.achievements.portfolios}
+                    />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/vlogs"
+                  component={() => (
+                    <Contents
+                      contentsName="vlogs"
+                      contents={this.props.achievements.vlogs}
+                    />
+                  )}
+                />
+                <Route exact path="/about" component={About} />
+                <Route exact path={`/blogs/:id`} component={Page} />
+                <Route exact path={`/portfolios/:id`} component={Page} />
+                <Route exact path={`/vlogs/:id`} component={Page} />
               </Switch>
             </div>
             <div class="column" />
           </div>
-
           <Epilog />
         </div>
       </BrowserRouter>
@@ -36,4 +65,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return { achievements: state.achievements };
+};
+
+export default connect(mapStateToProps)(App);
