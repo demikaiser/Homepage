@@ -18,9 +18,11 @@ class Epilog extends Component {
                 <br /> <span>Powered by </span>
                 <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React</a>
                 <span>, </span>
-                <a href="http://bulma.io/" target="_blank" rel="noopener noreferrer">Bulma</a>
+                <a href="https://jquery.com/" target="_blank" rel="noopener noreferrer">JQuery</a>
                 <span>, </span>
                 <a href="https://d3js.org/" target="_blank" rel="noopener noreferrer">D3</a>
+                <span>, </span>
+                <a href="http://bulma.io/" target="_blank" rel="noopener noreferrer">Bulma</a>
                 <span>, </span>
                 <a href="http://fontawesome.io/" target="_blank" rel="noopener noreferrer">FontAwesome</a>
                 <span>, and </span>

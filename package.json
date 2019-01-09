@@ -7,6 +7,8 @@
     "axios": "^0.18.0",
     "bulma": "^0.7.2",
     "html-loader": "^0.5.5",
+    "jquery": "^3.3.1",
+    "prismjs": "^1.15.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
@@ -30,8 +32,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "css-loader": "^2.1.0",
     "gh-pages": "^2.0.1",
     "react-redux": "^6.0.0",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "style-loader": "^0.23.1"
   }
 }

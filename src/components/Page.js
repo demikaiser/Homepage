@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Prism from 'prismjs'
+import 'prismjs/themes/prism-coy.css';
+import '../styles/Page.css';
 
 class Page extends Component {
-  render() {
-    console.log(this.props.match.params.id);
-    console.log(this.props);
 
+  componentDidMount() {
+    Prism.highlightAll();
+  }
+
+  render() {
     var contentId = this.props.match.params.id;
     var contentUrl = null;
 
@@ -32,7 +37,7 @@ class Page extends Component {
     return (
       <div>
         {contentUrl !== null ? (
-          <div dangerouslySetInnerHTML={{ __html: contentUrl }} />
+          <div class="content" dangerouslySetInnerHTML={{ __html: contentUrl }} />
         ) : (
           <p class="has-text-centered">No Page Content</p>
         )}
