@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Prism from 'prismjs'
 import 'prismjs/themes/prism-coy.css';
-import '../styles/Page.css';
 
 class Page extends Component {
 
   componentDidMount() {
     Prism.highlightAll();
+    window.scrollTo(0, 0);
   }
 
   render() {

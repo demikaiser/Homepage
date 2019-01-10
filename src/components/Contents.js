@@ -28,7 +28,9 @@ class Contents extends Component {
                 <Link to={`/${contentsName}/${content.id}`}>
                   <p class="title">{content.title}</p>
                   <p class="subtitle">{content.subtitle}</p>
-                  <img src={content.pathThumbnail} alt="" />
+                  <figure class="has-text-centered">
+                    <img src={content.pathThumbnail} alt="" />
+                  </figure>
                 </Link>
                 <div class="content">
                   <p>{content.description}</p>
@@ -44,7 +46,9 @@ class Contents extends Component {
                 <Link to={`/${contentsName}/${content.id}`}>
                   <p class="title">{content.title}</p>
                   <p class="subtitle">{content.subtitle}</p>
-                  <img src={content.pathThumbnail} alt="" />
+                  <figure class="has-text-centered">
+                    <img src={content.pathThumbnail} alt="" />
+                  </figure>
                 </Link>
                 <div class="content">
                   <p>{content.description}</p>
@@ -60,7 +64,9 @@ class Contents extends Component {
                 <Link to={`/${contentsName}/${content.id}`}>
                   <p class="title">{content.title}</p>
                   <p class="subtitle">{content.subtitle}</p>
-                  <img src={content.pathThumbnail} alt="" />
+                  <figure class="has-text-centered">
+                    <img src={content.pathThumbnail} alt="" />
+                  </figure>
                 </Link>
                 <div class="content">
                   <p>{content.description}</p>
