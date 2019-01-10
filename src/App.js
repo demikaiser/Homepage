@@ -12,15 +12,14 @@ import "bulma/css/bulma.css";
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Prolog />
           <div class="section columns">
             <div class="column" />
             <div class="column is-two-thirds">
               <Switch>
-                <Route exact path="/" component={About} />
-                <Route exact path="/homepage" component={About} />
+                <Route path="/" component={About} />
                 <Route
                   exact
                   path="/blogs"
