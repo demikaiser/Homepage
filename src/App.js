@@ -20,6 +20,7 @@ class App extends Component {
             <div class="column is-two-thirds">
               <Switch>
                 <Route exact path="/" component={About} />
+                <Route exact path="/homepage" component={About} />
                 <Route
                   exact
                   path="/blogs"
