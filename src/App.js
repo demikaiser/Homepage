@@ -6,6 +6,7 @@ import Epilog from "./components/Epilog";
 import About from "./components/About";
 import Contents from "./components/Contents";
 import Page from "./components/Page";
+import ToTopButton from "./components/ButtonBackToTop"
 import { connect } from "react-redux";
 import "bulma/css/bulma.css";
 
@@ -58,6 +59,7 @@ class App extends Component {
             </div>
             <div class="column" />
           </div>
+          <ToTopButton />
           <Epilog />
         </div>
       </BrowserRouter>

@@ -12,7 +12,7 @@
     <h6>2018/08/23</h6>
   </div>
 
-  <h2>0. Introduction<a href="#top">&nbsp;&uarr;</a></h2>
+  <h2>0. Introduction</h2>
 
   <p>
     The most important component part of learning the field (the artificial intelligence and machine learning) would be the pipeline. Starting from choosing the environment, setting up the features, finding a way to simulate, observe, and evaluate, constructing the model, training the model, evaluating the model, visualization for debugging and improvement are the parts of the pipeline. AI is a relatively young field and the theories are not that complex, but without understanding the practical aspects of it, the theories would be limited. The best way to understand the pipeline is to set up the environment to support it and to make experiments to verify the theories.
@@ -22,15 +22,15 @@
     As of 2018, it is very fortunate for anyone to have an environment to support the AI pipeline. There is no need to buy sophisticated hardware unless the users want a performance boost. Most of the technologies are open source projects, so we are going to also use an open source operating system, Linux. If you want to purchase a powerful graphics card, NVIDIA is the only option to support the frameworks and libraries that will be introduced in this tutorial. You can do a research if you want to use other hardware stacks.
   </p>
 
-  <h2>1. Installation<a href="#top">&nbsp;&uarr;</a></h2>
+  <h2>1. Installation</h2>
 
-  <h3>1.0. Ubuntu 18.04 64 bits<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>1.0. Ubuntu 18.04 64 bits</h3>
 
   <p>
     Ubuntu is one of the most popular Linux distros. The community is big and many applications exist for the ease of use. The computing environment is entirely programmable including the modules for its kernel. There are many step-by-step Ubuntu installation guides available online, so please follow one of those for the installation.
   </p>
 
-  <h3>1.1. JetBrains Pycharm IDE<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>1.1. JetBrains Pycharm IDE</h3>
 
   <p>
     You don't need an IDE (Integrated Development Environment) for writing Python code. However, a good IDE will make you productive and efficient. There are many options, but JetBrains Pycharm is my personal choice. Type following commands in the Ubuntu terminal:
@@ -65,7 +65,7 @@
     <figcaption>Installation of a New Virtual Environment</figcaption>
   </figure>
 
-  <h3>1.2. Google TensorFlow<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>1.2. Google TensorFlow</h3>
 
   <p>
     TensorFlow is an open-source software library for dataflow programming across a range of tasks. It is a symbolic math library, and is also used for machine learning applications such as neural networks. It's well-supported by the sponsor (Google) who is trustworthy as a sponsor for one of the most important AI projects. In Pycharm, open up the environment manager and simply search TensorFlow to install:
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     main()
 </code></pre>
 
-  <h3>1.3. OpenAI Foundation OpenAI Gym<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>1.3. OpenAI Foundation OpenAI Gym</h3>
 
   <p>
     OpenAI is a non-profit artificial intelligence (AI) research company that aims to promote and develop friendly AI in such a way as to benefit humanity as a whole. OpenAI Gym is an integrated environment to incorporate the object of OpenAI Foundation described above. To install the OpenAI Gym, install the cmake for the build process.
@@ -144,15 +144,15 @@ if __name__ == "__main__":
     main()
 </code></pre>
 
-  <h2>2. OpenAI Gym Reinforcement Learning Environment<a href="#top">&nbsp;&uarr;</a></h2>
+  <h2>2. OpenAI Gym Reinforcement Learning Environment</h2>
 
-  <h3>2.1. Overview<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>2.1. Overview</h3>
 
   <p>
     This chapter is a reinterpretation of OpenAI Gym Documentation (http://gym.openai.com/docs/) for the beginners who are about to enter the world of artificial intelligence development. All necessary concepts of AI development will be explained as well. Most of the concepts and diagrams I will introduce is from the most famous AI textbook "Artificial Intelligence: a Modern Approach".
   </p>
 
-  <h3>2.2. Agents and Environments<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>2.2. Agents and Environments</h3>
 
   <p>
     An AI system consists of two elements, which are an agent or the environment where the agent lives on. This is because traditionally the "intelligence" is defined as "an ability to change the environment in the desired way for the agent or for any directions the agent intends". Actually this is a simplified version from the perspective of computer science, but the Wikipedia says:
@@ -183,7 +183,7 @@ if __name__ == "__main__":
     The OpenAI Gym exactly satisfies this requirement. There are various 100% controlled environments, and these environments have well-documented interfaces where the sensors and actuators of the agent can interact with. The environments are community-developed and maintained, and you will be surprised at the number of available environments. This well-established standard makes the process easy to develop, execute, and experiment. In the following section, the interfaces for sensors and actuators will be explained.
   </p>
 
-  <h3>2.3. Elements of Environments: PEAS<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>2.3. Elements of Environments: PEAS</h3>
 
   <p>
     There are four elements of environments: Performance measures, environment systems, actuators, and sensors. Each of these elements is tied to the standardized interfaces of the OpenAI Gym. The code below is the basic structure of a complete AI system. I will refer to it when explaining each element.
@@ -212,13 +212,13 @@ if __name__ == "__main__":
     main()
 </code></pre>
 
-  <h4>2.3.1. Performance Measures<a href="#top">&nbsp;&uarr;</a></h4>
+  <h4>2.3.1. Performance Measures</h4>
 
   <p>
     Performance measures let the agent know whether it reacts properly to accomplish its goal. We call it "the reward". Each action is evaluated and the reward is given as a result of the action. See the variable <code class="language-python">reward</code> in the code above. It is returned as a result of <code class="language-python">env.step(action)</code>. Usually the value of the reward is greater if the agent is closer to the goal.
   </p>
 
-  <h4>2.3.2. Environment Systems<a href="#top">&nbsp;&uarr;</a></h4>
+  <h4>2.3.2. Environment Systems</h4>
 
   <p>
     Environment systems represent the virtual environment the agent interacts to. The agent can gather information about the environment only through the sensors. However, OpenAI Gym provides a dictionary filled with related information about the environment for a debugging purpose. See the <code class="language-python">info</code> variable returned from <code class="language-python">env.step(action)</code>.
@@ -228,13 +228,13 @@ if __name__ == "__main__":
     The environment systems also let the agent know whether it reaches the goal or not by providing the boolean variable <code class="language-python">done</code>. Therefore, in each episode it is a good practice to escape from the loop when the variable <code class="language-python">done</code> is set to True.
   </p>
 
-  <h4>2.3.3. Actuators<a href="#top">&nbsp;&uarr;</a></h4>
+  <h4>2.3.3. Actuators</h4>
 
   <p>
     Actuators let the agent react to the environments. In the OpenAI environments, there are a finite number of actions the agent can choose from. See the <code class="language-python">action</code> variable returned from <code class="language-python">env.action_space.sample()</code>. The <code class="language-python">action_space</code> has all the actions.
   </p>
 
-  <h4>2.3.4. Sensors<a href="#top">&nbsp;&uarr;</a></h4>
+  <h4>2.3.4. Sensors</h4>
 
   <p>
     Sensors let the agent perceive the environments. In the OpenAI Gym, the variable <code class="language-python">observation</code> contains the data from the sensors of the agent. This variable can be utilized for learning and to generate a proper action. One thing to remember is that the environment should be reset before using it by <code class="language-python">env.reset()</code>. This piece of code returns the initial observation.
@@ -244,7 +244,7 @@ if __name__ == "__main__":
     The observation space is defined and embedded in the environment, and you examine the range and characteristics of the observation space at <code class="language-python">env.observation_space</code>.
   </p>
 
-  <h3>2.4. Characteristics of Environments<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>2.4. Characteristics of Environments</h3>
 
   <p>
     Environments have characteristics which have to be considered for developing an effective AI system. Sometimes an environment is only partially observable. There can be more than one agent, interacting with each other. The previous episode affects the episode that comes after the previous one. The environment itself can change, which makes choosing the action more difficult than the static environment. Some environments are not deterministic, which means you can't tell the exact output from an action. The following table summarizes the characteristics of environments, and shows some sample environments and its characteristics.
@@ -259,7 +259,7 @@ if __name__ == "__main__":
     The full list of environments available in OpenAI Gym can be viewed by clicking this <a target="_blank" href="https://gym.openai.com/envs/">link</a>. If there is no environment you are looking for, it is possible to develop one and upload the environment to the OpenAI Gym. See the OpenAI Gym documentation.
   </p>
 
-  <h3>2.5. Intelligent Agents<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>2.5. Intelligent Agents</h3>
 
   <p>
     There are several models for intelligent agents: Simple Reflex, Model-Based, Goal-Based, Utility-Based, and Learning Agent. Each model has its advantages and limitations. In OpenAI Gym, the agent model is close to the Utility-based one in that the agent receives utilities (rewards) after taking one step forward. The following diagram shows how the utility-based model works. It has an internal model to predict the next state for possible actions. The agent executes the action when it finds the best action it can take at the stage.
@@ -283,7 +283,7 @@ if __name__ == "__main__":
     The learning agent has an internal flexible and adjustable model for the environment. It tries its best to get the maximum utilities at the given state, but also it tries to improve the internal model for the future use. If the learning algorithm is suitable and efficient, the performance will be improved over time. If not, the performance will be not good also consume a large number of computing resources because of the learning cost. If the environment is simple enough, the simple reflex model can be the best model for the performance and the cost. However, the learning agent pays off when the environment is too complex to be programmatically structurized. Let's see an example of a simple learning agent.
   </p>
 
-  <h3>2.6. Taxi Driver Agent with Q-Learning<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>2.6. Taxi Driver Agent with Q-Learning</h3>
 
   <p>
     In this section, a learning agent which uses Q-learning will be introduced with the Taxi-v2 environment in OpenAI Gym. Q-learning is a good place to start because it is conceptually simple and intuitive. Let's start with the environment, which is the problem we have to solve. See the following image:
@@ -365,9 +365,9 @@ if __name__ == "__main__":
     There are many learning algorithms but the structure would be the same. What is needed to use a different learning algorithm is to analyze the environment, states, actions and determine the design of the specific learning system. As explained, OpenAI Gym provides a convenient way to develop and experiment an AI system. For more complex learning systems, there are AI frameworks that enable researchers to use ready-made AI algorithms. It makes researchers be able to focus high-level logic instead of all the technicalities of the algorithms. One of them is Google TensorFlow.
   </p>
 
-  <h2>3. Google TensorFlow Machine Learning Framework<a href="#top">&nbsp;&uarr;</a></h2>
+  <h2>3. Google TensorFlow Machine Learning Framework</h2>
 
-  <h3>3.1. Overview<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>3.1. Overview</h3>
 
   <p>
     Google launched the Tensorflow in 2015 by its AI/ML development team, Google Brain. It has been a major success in that there are thousands of developers participating in the open source project. There had been other machine learning libraries but it has never been like Tensorflow. It must have something to do with the brand image of Google, Alpha Go, and some other factors. The community is very active and many developers try to apply the framework to many other fields such as music generation (Project <a target="_blank" href="https://magenta.tensorflow.org/">Majenta</a>).
@@ -386,7 +386,7 @@ if __name__ == "__main__":
     There are several levels APIs available in several languages, but only Python APIs will be introduced for the sake of brevity. It seems Python became the official language for machine learning development. There are lower level APIs that can control variables, tensors, and graphs. There are high level APIs that can build machine learning techniques with a few lines of code. Finally, there are visualization libraries which show things under the hood. Let's start with the low level APIs.
   </p>
 
-  <h3>3.2. Low Level APIs<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>3.2. Low Level APIs</h3>
 
   <p>
     TensorFlow integrates other Python math libraries (e.g. numpy, etc.) into the components for the artificial intelligence and machine learning. The low-level APIs are wrappers for those math packages to provide consistent interfaces for the high-level operations. Let's see the following code as an example. The example is the famous MNIST number classification problem with neural networks. The code is very well commented, so read it in order:
@@ -474,7 +474,7 @@ print('Accuracy:', sess.run(accuracy,
                                        keep_prob: 1}))
   </code></pre>
 
-  <h3>3.3. High Level APIs: Keras<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>3.3. High Level APIs: Keras</h3>
 
   <p>
      Keras is an open source neural network library written in Python. It is capable of running on top of TensorFlow, Microsoft Cognitive Toolkit or Theano. Designed to enable fast experimentation with deep neural networks, it focuses on being user-friendly, modular, and extensible. As you can see the main objective of Keras interfaces, the following code do the same MNIST classification with much less lines of code:
@@ -507,7 +507,7 @@ model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test)
   </code></pre>
 
-  <h3>3.4. TensorBoard<a href="#top">&nbsp;&uarr;</a></h3>
+  <h3>3.4. TensorBoard</h3>
 
   <p>
     TensorBoard is a visualization package in TensorFlow like matplotlib. It is being operated as a web-server so it is possible to have multiple users for one visualization server to share information about the learning process of a powerful training machine. Run the following MNIST sample code from Google:
@@ -743,7 +743,7 @@ if __name__ == '__main__':
     <figcaption>Tensorboard: Histograms</figcaption>
   </figure>
 
-  <h2>0. Conclusion<a href="#top">&nbsp;&uarr;</a></h2>
+  <h2>0. Conclusion</h2>
 
   <p>
     OpenAI Gym and TensorFlow are huge subjects, but I thought it is really important to get a big picture for people who want to start learning. Artificial intelligence and machine learning have become the fundamental skill sets in computer science and professionals in diverse fields attempt to learn it. The framework itself is well-organized and easy to use; however, if one can't see the big picture, one can't apply the framework to their fields well. Unfortunately, there are not many easy courses for the public. Usually there are prerequisites in computer science such as discrete mathematics, algorithms, programming languages.
@@ -757,7 +757,7 @@ if __name__ == '__main__':
     In the past, technologies were powerful but not as much as the present. Technologies are so pervasive -- I think it happened with the mobile revolution, affecting every single field we can imagine. Computers were limited to solve deterministic tasks which can be handled by finite lines of commands. Now AI/ML enables computers to solve stochastic tasks and predict the future. This opened up infinite possibilities for the mankind. I wish everyone can have the benefits of it.
   </p>
 
-  <h2>Appendix A. References<a href="#top">&nbsp;&uarr;</a></h2>
+  <h2>Appendix A. References</h2>
 
   <div class="csl-bib-body" style="line-height: 2; margin-left: 2em; text-indent:-2em;">
     <div class="csl-entry">Connecting with Music Through Magenta.js. (n.d.). Retrieved September 6, 2018, from <a href="https://magenta.tensorflow.org/blog/2018/05/03/connecting-with-magenta-js/">https://magenta.tensorflow.org/blog/2018/05/03/connecting-with-magenta-js/</a></div>
