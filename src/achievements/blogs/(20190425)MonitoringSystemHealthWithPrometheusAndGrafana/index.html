@@ -86,7 +86,9 @@ api_http_requests_total{method="POST", handler="/messages"}
     Prometheus uses its own query language to enable users to find data for them. Please refer to the following link for details:
   </p>
 
-  <a target="_blank" href="https://prometheus.io/docs/prometheus/latest/querying/basics/">Prometheus Query Langauge Documentation</a>
+  <p>
+    <a target="_blank" href="https://prometheus.io/docs/prometheus/latest/querying/basics/">Prometheus Query Langauge Documentation</a>
+  </p>
 
   <h2>2. Installation</h2>
 
@@ -98,7 +100,9 @@ api_http_requests_total{method="POST", handler="/messages"}
     The installation step is very simple and straight forward. Follow the link below, and download the binary file for your operating system. Unzip the downloaded file. You can run the execution file; however, it's a good idea to configure it first to finetune for your use case.
   </p>
   
-  <a target="_blank" href="https://prometheus.io/download/">Prometheus Download Page</a>
+  <p>
+    <a target="_blank" href="https://prometheus.io/download/">Prometheus Download Page</a>
+  </p>
 
   <h4>2.1.2. Configuration</h4>
 
@@ -163,7 +167,9 @@ scrape_configs:
     Follow the link below to see all domain-specific configurations and more details:
   </p>
 
-  <a target="_blank" href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/">Prometheus Configuration Details</a>
+  <p>
+    <a target="_blank" href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/">Prometheus Configuration Details</a>
+  </p>
 
   <p>
     After completing the configuration, execute it and you should be able to use the web interface like the following.
@@ -196,9 +202,13 @@ scrape_configs:
     Visit the download page for exporters. Download the exporters, install it to your system, then add the address to the configuration file. It should start collecting data from newly added target(s). Also, you can write a custom exporter if the exporters above don't satisfy your needs. Try to search 3rd party exporters before writing your own.
   </p>
 
-  <a target="_blank" href="https://prometheus.io/docs/instrumenting/exporters/">Known Exporters and Integrations</a>
+  <p>
+    <a target="_blank" href="https://prometheus.io/docs/instrumenting/exporters/">Known Exporters and Integrations</a>
+  </p>
 
-  <a target="_blank" href="https://prometheus.io/docs/instrumenting/writing_exporters/">How to Write Prometheus Exporters</a>
+  <p>
+    <a target="_blank" href="https://prometheus.io/docs/instrumenting/writing_exporters/">How to Write Prometheus Exporters</a>
+  </p>
 
   <h3>2.2. Grafana</h3>
 
@@ -208,7 +218,9 @@ scrape_configs:
     Follow the link below to download Grafana for your system. Ideally, the monitoring dashboard can be installed in a centralized screen to overview all the resources under management. However, there could be use cases or business requirements where there should be multiple control towers instead of one. 
   </p>
 
-  <a target="_blank" href="https://grafana.com/grafana/download">Download Grafana</a>
+  <p>
+    <a target="_blank" href="https://grafana.com/grafana/download">Download Grafana</a>
+  </p>
 
   <p>
     After the installation, the data source should be specified, and the data source should be Prometheus in our case. Grafana supports various data source like the following:
