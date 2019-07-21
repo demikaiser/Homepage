@@ -1,0 +1,33 @@
+
+  <script>
+
+function demikaiser__homepage__generateTableOfContents() {
+  var tocElement = document.getElementById("demikaiser__homepage--table-of-contents");
+  var headersArray = [];
+  var headerIdsArray = [];
+  var allElementsArray = document.getElementsByTagName("*");
+
+  for (let i = 0; i < allElementsArray.length; i++) {
+    let tagName = allElementsArray[i].tagName;
+    if (tagName == "H2" || tagName == "H3" || tagName == "H4") {
+      headersArray.push(allElementsArray[i]);
+      let idFromText = "id" + allElementsArray[i].textContent.toLowerCase().replace(/[^a-z0-9]/gi, '');
+      allElementsArray[i].id = idFromText;
+      headerIdsArray.push(idFromText);
+    }
+  }
+  tocElement.innerHTML += '<p><b>Table of Contents</b></p>';
+  for (let j = 0; j < headersArray.length; j++) {
+    let tmpAnchor = document.createElement('a');
+    tmpAnchor.setAttribute('href', '#' + headerIdsArray[j]);
+    tmpAnchor.innerText = headersArray[j].textContent;
+    tocElement.appendChild(tmpAnchor);
+
+    let tmpNewline = document.createElement('br');
+    tocElement.appendChild(tmpNewline);
+  }
+}
+demikaiser__homepage__generateTableOfContents();
+
+  </script>
+
