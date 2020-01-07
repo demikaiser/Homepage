@@ -22,12 +22,6 @@ fs.statSync(fileToDelete, function (err, stats) {
 
 var stringToStore = "";
 
-
-
-
-
-
-
 // ######## ######## ######## ######## ######## ######## ######## ########
 // #                      File Structure Scrapping                       #
 // ######## ######## ######## ######## ######## ######## ######## ########
@@ -36,7 +30,6 @@ var stringToStore = "";
 var achievements = {
   "blogs": [],
   "portfolios": [],
-  "vlogs": []
 };
 
 // Search information.json files.
@@ -64,12 +57,11 @@ var getAllEntriesFromOneFolder = (folder) => {
 
 getAllEntriesFromOneFolder('blogs');
 getAllEntriesFromOneFolder('portfolios');
-getAllEntriesFromOneFolder('vlogs');
+// getAllEntriesFromOneFolder('vlogs');
 
 // Reverse the elements to get the most latest articles on the top.
 achievements.blogs = achievements.blogs.reverse();
 achievements.portfolios = achievements.portfolios.reverse();
-achievements.vlogs = achievements.vlogs.reverse();
 
 // ######## ######## ######## ######## ######## ######## ######## ########
 // #                       JSON String Processing                        #
@@ -112,27 +104,6 @@ for (let i = 0; i < achievements.portfolios.length; i++) {
   jsonToStore += 'subtitle:' + '\"' + achievements.portfolios[i].subtitle + '\"';
   jsonToStore += ',';
   jsonToStore += 'description:' + '\"' + achievements.portfolios[i].description + '\"';
-
-  jsonToStore += '}';
-}
-
-jsonToStore += '], vlogs: [';
-
-for (let i = 0; i < achievements.vlogs.length; i++) {
-  if (i !== 0) { jsonToStore += ','}
-  jsonToStore += '{';
-
-  jsonToStore += 'id:' + '\"' + achievements.vlogs[i].id+ '\"';
-  jsonToStore += ',';
-  jsonToStore += 'pathHtml: require(\"' + achievements.vlogs[i].pathHtml + '\")';
-  jsonToStore += ',';
-  jsonToStore += 'pathThumbnail: require(\"' + achievements.vlogs[i].pathThumbnail+ '\")';
-  jsonToStore += ',';
-  jsonToStore += 'title:' + '\"' + achievements.vlogs[i].title + '\"';
-  jsonToStore += ',';
-  jsonToStore += 'subtitle:' + '\"' + achievements.vlogs[i].subtitle + '\"';
-  jsonToStore += ',';
-  jsonToStore += 'description:' + '\"' + achievements.vlogs[i].description + '\"';
 
   jsonToStore += '}';
 }

@@ -12,12 +12,6 @@ class Prolog extends Component {
           </div>
           <div class="container">
             <div class="content has-text-centered">
-              <Link to="/" class="button is-medium">
-                <span class="icon is-medium">
-                  <i class="fa fa-home" />
-                </span>
-                <span>Home</span>
-              </Link>
               <Link to="/blogs" class="button is-medium">
                 <span class="icon is-medium">
                   <i class="fa fa-file-alt" />
@@ -29,12 +23,6 @@ class Prolog extends Component {
                   <i class="fa fa-file-image" />
                 </span>
                 <span>Portfolios</span>
-              </Link>
-              <Link to="/vlogs" class="button is-medium">
-                <span class="icon is-medium">
-                  <i class="fa fa-file-video" />
-                </span>
-                <span>Vlogs</span>
               </Link>
               <Link to="/about" class="button is-medium">
                 <span class="icon is-medium">

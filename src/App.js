@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./components/Home";
 import Prolog from "./components/Prolog";
 import Epilog from "./components/Epilog";
 import About from "./components/About";
@@ -20,7 +19,16 @@ class App extends Component {
             <div class="column" />
             <div class="column is-two-thirds">
               <Switch>
-                <Route exact path="/" component={About} />
+                <Route 
+                  exact 
+                  path="/" 
+                  component={() => (
+                    <Contents
+                      contentsName="portfolios"
+                      contents={this.props.achievements.portfolios}
+                    />
+                  )}
+                />
                 <Route
                   exact
                   path="/blogs"
@@ -38,16 +46,6 @@ class App extends Component {
                     <Contents
                       contentsName="portfolios"
                       contents={this.props.achievements.portfolios}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/vlogs"
-                  component={() => (
-                    <Contents
-                      contentsName="vlogs"
-                      contents={this.props.achievements.vlogs}
                     />
                   )}
                 />
