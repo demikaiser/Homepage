@@ -28,12 +28,6 @@ class Page extends Component {
       }
     });
 
-    achievements.vlogs.forEach(vlog => {
-      if (vlog.id === contentId) {
-        contentUrl = vlog.pathHtml;
-      }
-    });
-
     return (
       <div>
         {contentUrl !== null ? (
