@@ -1,6 +1,9 @@
 <html>
 <head>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/brands/favicon-32x32.png">
+
   <!-- Custom Global CSS -->
   <link rel="stylesheet" href="./styles/main.css">
 
@@ -46,105 +49,7 @@
   <br/>
   <div class="dkdv__homepage--introduction">
 
-    <!-- Section 0: Overview -->
-    <section id="dkdv__homepage--parallax-section-0">
 
-      <div id="hello" style="position: relative;">
-        <img src="./assets/brands/diamond_yellow_original.png"
-            id="" 
-            class="lax"
-            style="position: absolute; 
-                  width: 15%; z-index: 0;
-                  top: 17%; left: 50%;
-                  transform-origin: bottom center;
-                  transform: translate(-50%, 0%) rotateZ(0deg);
-                  "
-            data-lax-anchor="self"
-            data-lax-translate-y="500 0, 1500 3000"
-        />
-        <img src="./assets/brands/diamond_red_original.png"
-            id="" 
-            class="lax"
-            style="position: absolute; 
-                  width: 15%; z-index: 0;
-                  top: 17%; left: 50%;
-                  transform-origin: bottom center;
-                  transform: translate(-50%, 0%) rotateZ(72deg);
-                  "
-            data-lax-anchor="self"
-            data-lax-translate-y="500 0, 1500 3000"
-        />
-        <img src="./assets/brands/diamond_purple_original.png"
-            id="" 
-            class="lax"
-            style="position: absolute; 
-                  width: 15%; z-index: 0;
-                  top: 17%; left: 50%;
-                  transform-origin: bottom center;
-                  transform: translate(-50%, 0%) rotateZ(144deg);
-                  "
-            data-lax-anchor="self"
-            data-lax-translate-y="0 0, 500 -300"
-            data-lax-opacity="0 1, 500 0"
-        />
-        <img src="./assets/brands/diamond_blue_original.png"
-            id="" 
-            class="lax"
-            style="position: absolute; 
-                  width: 15%; z-index: 0;
-                  top: 17%; left: 50%;
-                  transform-origin: bottom center;
-                  transform: translate(-50%, 0%) rotateZ(216deg);
-                  "
-            data-lax-anchor="self"
-            data-lax-translate-y="0 0, 500 -300"
-            data-lax-opacity="0 1, 500 0"
-        />
-        <img src="./assets/brands/diamond_green_original.png"
-            id="" 
-            class="lax"
-            style="position: absolute; 
-                  width: 15%; z-index: 0;
-                  top: 17%; left: 50%;
-                  transform-origin: bottom center;
-                  transform: translate(-50%, 0%) rotateZ(288deg);
-                  "
-            data-lax-anchor="self"
-            data-lax-translate-y="0 0, 500 -300"
-            data-lax-opacity="0 1, 500 0"
-        />
-      </div>
-
-    </section>
-
-    <!-- Section 1: Diamond Yellow - Inspiration -->
-    <section id="dkdv__homepage--parallax-section-1">
-      <h1 id="dkdv__homepage--parallax-font-1" 
-          class="lax uk-text-bold uk-text-center"
-          data-lax-preset="spin fadeIn">
-        Hello! This is bold text.
-      </h1>
-    </section>
-
-    <!-- Section 2: Diamond Red - Philosophy -->
-    <section id="dkdv__homepage--parallax-section-2">
-    </section>
-
-    <!-- Section 3: Diamond Purple - Design -->
-    <section id="dkdv__homepage--parallax-section-3">
-    </section>
-
-    <!-- Section 4: Diamond Blue - Science & Technology -->
-    <section id="dkdv__homepage--parallax-section-4">
-    </section>
-
-    <!-- Section 5: Diamond Green - Engineering -->
-    <section id="dkdv__homepage--parallax-section-5">
-    </section>
-
-    <!-- Section 6: Summary -->
-    <section id="dkdv__homepage--parallax-section-6">
-    </section>
 
     <!-- Footer -->
     <section class="dkdv__homepage--footer">
@@ -190,12 +95,8 @@
       window.requestAnimationFrame(updateLax)
     }
 
-
-    /* Temp */
-    window.onscroll = () => {
-
-      console.log("scroll: " + window.scrollY);
-    }
+    /* Temporaty Redirection */
+    $(location).attr('href', './portfolios.html')
 
   </script>
 
